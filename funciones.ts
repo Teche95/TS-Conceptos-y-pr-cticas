@@ -89,3 +89,34 @@
 //     return a - b
 // }
 
+// inferencia funciones anonimas segun el contexto
+// TS sabe que avengers es un array de strings por eso cuando pongo (avenger.) me muestra metodos de string 
+// const avengers = ["hulk", "thor", "spiderman"]
+
+// avengers.forEach((avenger) => {
+//     console.log(avenger.toLowerCase())
+// })
+
+
+//Objetos 
+// los objetos tienen inferencia de datos
+
+// Type Alias
+// los type alias siempre se crean con la primera letra mayuscula pascalCase
+type Hero = {
+    name: string,
+    age: number
+}
+
+// let hero = {
+//     name: "hulk",
+//     age: 40
+// }
+// // podemos ver como sabe ts que tipos de datos son
+// hero.age
+
+function createHero(name: string, age: number): Hero {
+    return { name, age }
+}
+
+const thor = createHero("thor", 1000)
